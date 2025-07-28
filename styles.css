@@ -201,6 +201,19 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-resume {
+    background: var(--gradient-secondary);
+    color: var(--text-primary);
+    border: 2px solid transparent;
+}
+
+.btn-resume:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
