@@ -673,3 +673,41 @@ section {
         font-size: 1.3rem;
     }
 }
+
+@media (max-width: 1024px) {
+    .hamburger {
+        display: flex;
+        z-index: 1100;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--surface-color);
+        width: 100vw;
+        text-align: center;
+        transition: left 0.3s;
+        box-shadow: 0 10px 27px var(--shadow-color);
+        padding: 2rem 0;
+        gap: 2rem;
+        z-index: 1050;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-link {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
