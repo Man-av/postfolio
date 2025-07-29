@@ -86,35 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Typing animation for hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}
-
-// Initialize typing animation when page loads
-document.addEventListener('DOMContentLoaded', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        // Store original text and don't start typing animation immediately
-        heroTitle.setAttribute('data-original-text', originalText);
-        // Only start typing animation after a longer delay or remove it entirely
-        // setTimeout(() => {
-        //     typeWriter(heroTitle, originalText, 50);
-        // }, 500);
-    }
-});
-
 // Project card hover effects
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -148,26 +119,6 @@ document.querySelectorAll('.social-link').forEach(link => {
     link.addEventListener('mouseleave', function() {
         this.style.transform = 'translateY(0) scale(1)';
     });
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const rate = scrolled * -0.5;
-        hero.style.transform = `translateY(${rate}px)`;
-    }
-});
-
-// Loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
 });
 
 // Scroll to top functionality
@@ -223,7 +174,6 @@ function createScrollToTop() {
     });
 }
 
-// Initialize scroll to top button
 document.addEventListener('DOMContentLoaded', createScrollToTop);
 
 // Add CSS for active nav link
