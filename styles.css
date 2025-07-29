@@ -269,10 +269,15 @@ body {
 }
 
 .profile-img {
-    width: 520px;
-    height: 520px;
+    width: 600px;
+    height: 600px;
     object-fit: cover;
     object-position: center top;
+    border-radius: 0 0 50% 50% / 0 0 30% 30%; /* Curved only at the bottom */
+    display: block;
+    margin: 0 auto;
+    background: none;
+    box-shadow: none;
 }
 
 
@@ -661,6 +666,7 @@ section {
     .profile-img {
         width: 400px;
         height: 400px;
+        border-radius: 0 0 50% 50% / 0 0 30% 30%;
     }
     .hero-title {
         font-size: 2.5rem;
@@ -708,8 +714,9 @@ section {
     }
 
     .profile-img {
-        width: 260px;
-        height: 260px;
+        width: 220px;
+        height: 220px;
+        border-radius: 0 0 50% 50% / 0 0 30% 30%;
     }
 
     .hero-buttons {
