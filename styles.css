@@ -252,57 +252,11 @@ body {
 .profile-img {
     width: 350px;
     height: 350px;
-    border-radius: 15px;
     object-fit: cover;
     object-position: center top;
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(100, 255, 218, 0.2);
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--background-color);
-    font-size: 4rem;
-    font-weight: bold;
-    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
 }
 
-.profile-img::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 30%,
-        rgba(100, 255, 218, 0.1) 50%,
-        transparent 70%
-    );
-    transform: rotate(45deg);
-    animation: shimmer 3s infinite;
-}
 
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    }
-    100% {
-        transform: translateX(100%) translateY(100%) rotate(45deg);
-    }
-}
-
-.profile-img:hover {
-    transform: perspective(1000px) rotateY(-10deg) rotateX(10deg) scale(1.05);
-    box-shadow: 
-        0 35px 70px rgba(0, 0, 0, 0.6),
-        0 0 40px rgba(100, 255, 218, 0.3);
-}
 
 .scroll-indicator {
     position: absolute;
@@ -715,7 +669,6 @@ section {
     .profile-img {
         width: 280px;
         height: 280px;
-        transform: perspective(800px) rotateY(-3deg) rotateX(3deg);
     }
 
     .hero-buttons {
@@ -769,7 +722,6 @@ section {
     .profile-img {
         width: 220px;
         height: 220px;
-        transform: perspective(600px) rotateY(-2deg) rotateX(2deg);
     }
 
     .skills-grid {
