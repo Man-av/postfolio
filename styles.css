@@ -156,6 +156,21 @@ body {
     font-weight: 700;
     margin-bottom: 1.2rem;
     line-height: 1.1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hero-hi {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.hero-name {
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-left: 0.2em;
 }
 
 .highlight {
