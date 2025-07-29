@@ -106,9 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const originalText = heroTitle.innerHTML;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
+        // Store original text and don't start typing animation immediately
+        heroTitle.setAttribute('data-original-text', originalText);
+        // Only start typing animation after a longer delay or remove it entirely
+        // setTimeout(() => {
+        //     typeWriter(heroTitle, originalText, 50);
+        // }, 500);
     }
 });
 
