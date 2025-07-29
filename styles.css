@@ -273,9 +273,8 @@ body {
     height: 600px;
     object-fit: cover;
     object-position: center top;
-    border-radius: 0 0 50% 50% / 0 0 30% 30%; /* Curved only at the bottom */
+    border-radius: 0 0 50% 50% / 0 0 30% 30%;
     display: block;
-    margin: 0 auto;
     background: none;
     box-shadow: none;
 }
