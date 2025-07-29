@@ -76,7 +76,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.skill-category, .project-card, .cert-item, .contact-item');
+    const animateElements = document.querySelectorAll('.skill-category, .project-card, .cert-item');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -136,16 +136,14 @@ document.querySelectorAll('.skill-item').forEach(item => {
     });
 });
 
-// Contact item hover effects
-document.querySelectorAll('.contact-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-        this.style.borderColor = '#64ffda';
+// Social link hover effects
+document.querySelectorAll('.social-link').forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.1)';
     });
     
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-        this.style.borderColor = '#233554';
+    link.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
