@@ -20,20 +20,22 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 20px; /* Increased from default 16px */
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--background-color);
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7; /* Slightly increased */
     overflow-x: hidden;
+    font-size: 1.1rem; /* Slightly larger base */
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* Increased from 1200px */
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 3rem; /* More padding */
 }
 
 /* Navigation */
@@ -148,9 +150,9 @@ body {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3.8rem; /* Larger heading */
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     line-height: 1.1;
 }
 
@@ -162,17 +164,17 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 2rem; /* Larger subtitle */
     color: var(--primary-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     font-weight: 500;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.3rem; /* Larger description */
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 500px;
+    margin-bottom: 2.2rem;
+    max-width: 600px;
 }
 
 .hero-buttons {
@@ -182,11 +184,12 @@ body {
 }
 
 .btn {
-    padding: 0.75rem 2rem;
+    padding: 1rem 2.5rem; /* Larger buttons */
     border: none;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
     cursor: pointer;
     display: inline-block;
@@ -262,8 +265,8 @@ body {
 }
 
 .profile-img {
-    width: 350px;
-    height: 350px;
+    width: 420px; /* Larger profile image */
+    height: 420px;
     object-fit: cover;
     object-position: center top;
 }
@@ -646,6 +649,20 @@ section {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 98vw;
+        padding: 0 1.5rem;
+    }
+    .profile-img {
+        width: 320px;
+        height: 320px;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -683,12 +700,12 @@ section {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .profile-img {
-        width: 280px;
-        height: 280px;
+        width: 220px;
+        height: 220px;
     }
 
     .hero-buttons {
