@@ -135,12 +135,14 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    justify-items: start;
 }
 
 .hero-image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 0;
 }
 
 .hero-text {
@@ -277,6 +279,7 @@ body {
     display: block;
     background: none;
     box-shadow: none;
+    margin: 0;
 }
 
 
