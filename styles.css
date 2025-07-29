@@ -265,8 +265,8 @@ body {
 }
 
 .profile-img {
-    width: 420px; /* Larger profile image */
-    height: 420px;
+    width: 520px;
+    height: 520px;
     object-fit: cover;
     object-position: center top;
 }
@@ -655,8 +655,8 @@ section {
         padding: 0 1.5rem;
     }
     .profile-img {
-        width: 320px;
-        height: 320px;
+        width: 400px;
+        height: 400px;
     }
     .hero-title {
         font-size: 2.5rem;
@@ -704,8 +704,8 @@ section {
     }
 
     .profile-img {
-        width: 220px;
-        height: 220px;
+        width: 260px;
+        height: 260px;
     }
 
     .hero-buttons {
