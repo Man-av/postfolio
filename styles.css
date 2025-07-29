@@ -332,7 +332,7 @@ section {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
@@ -651,7 +651,7 @@ section {
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .projects-grid {
@@ -689,5 +689,9 @@ section {
     .profile-img {
         width: 200px;
         height: 200px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 }
