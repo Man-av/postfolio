@@ -179,8 +179,12 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1.2rem;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .btn {
