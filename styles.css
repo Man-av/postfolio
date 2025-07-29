@@ -214,6 +214,35 @@ body {
     transform: translateY(-2px);
 }
 
+.hero-social {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: flex-start;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.social-link:hover {
+    background: transparent;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
@@ -643,6 +672,10 @@ section {
     }
 
     .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-social {
         justify-content: center;
     }
 
