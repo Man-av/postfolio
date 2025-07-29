@@ -256,6 +256,13 @@ body {
     object-fit: cover;
     border: 3px solid var(--primary-color);
     box-shadow: 0 20px 40px var(--shadow-color);
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--background-color);
+    font-size: 4rem;
+    font-weight: bold;
 }
 
 .scroll-indicator {
