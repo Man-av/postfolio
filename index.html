@@ -3,29 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manav Sharma - Data Analyst Portfolio</title>
+    <title>Legal Solutions - Road Challan & Fine Settlement Services</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="light-theme">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <span>MS</span>
+                <i class="fas fa-balance-scale"></i>
+                <span>Legal Solutions</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#process" class="nav-link">Process</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </div>
     </nav>
@@ -34,266 +40,298 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-image">
-                    <img src="./image/profilee.png" alt="Manav Sharma" class="profile-img" onerror="this.src='./image/profile\'.jpg'; this.onerror=null;">
-                </div>
                 <div class="hero-text">
                     <h1 class="hero-title">
-                        Hi, I'm<br>
-                        <span class="highlight hero-name">Manav Sharma</span>
+                        Expert Legal Assistance for
+                        <span class="highlight">Road Challans & Fines</span>
                     </h1>
-                    <p class="hero-subtitle">Aspiring Data Analyst</p>
+                    <p class="hero-subtitle">Professional Advocate Services for Quick and Efficient Fine Settlement</p>
                     <p class="hero-description">
-                        Transforming messy data into clean, actionable insights with Python, SQL, and Power BI.
+                        Don't let traffic challans and fines disrupt your life. Our experienced legal team specializes in 
+                        resolving road traffic violations quickly and efficiently across India. Get professional legal 
+                        assistance to settle your fines with minimal hassle.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="resume.pdf" download class="btn btn-resume">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
+                        <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+                        <a href="#services" class="btn btn-secondary">Learn More</a>
                     </div>
-                    <div class="hero-social">
-                        <a href="https://github.com/Man-av/" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/manvsharma/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="mailto:manavsharma6626@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Cases Resolved</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24hrs</span>
+                            <span class="stat-label">Response Time</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-card">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Professional Legal Services</h3>
+                        <p>Expert advocacy for all types of traffic violations</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive legal solutions for all your traffic challan needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car-crash"></i>
+                    </div>
+                    <h3>Traffic Violation Cases</h3>
+                    <p>Expert handling of all types of traffic violations including speeding, signal jumping, parking violations, and more.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Speeding tickets</li>
+                        <li><i class="fas fa-check"></i> Signal violations</li>
+                        <li><i class="fas fa-check"></i> Parking fines</li>
+                        <li><i class="fas fa-check"></i> License violations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Documentation & Filing</h3>
+                    <p>Complete assistance with document preparation, filing, and representation in traffic courts.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Document preparation</li>
+                        <li><i class="fas fa-check"></i> Court representation</li>
+                        <li><i class="fas fa-check"></i> Legal consultation</li>
+                        <li><i class="fas fa-check"></i> Follow-up services</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Negotiation & Settlement</h3>
+                    <p>Professional negotiation with authorities to reduce fines and penalties where possible.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Fine reduction</li>
+                        <li><i class="fas fa-check"></i> Payment plans</li>
+                        <li><i class="fas fa-check"></i> Case dismissal</li>
+                        <li><i class="fas fa-check"></i> Legal advice</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>24/7 Consultation</h3>
+                    <p>Round-the-clock legal consultation and emergency assistance for urgent traffic violations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Emergency support</li>
+                        <li><i class="fas fa-check"></i> Phone consultation</li>
+                        <li><i class="fas fa-check"></i> WhatsApp support</li>
+                        <li><i class="fas fa-check"></i> Quick response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">How We Help You</h2>
+            <p class="section-subtitle">Simple and efficient process to resolve your traffic challans</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Contact Us</h3>
+                        <p>Reach out to us via phone, WhatsApp, or email with your challan details</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Free Consultation</h3>
+                        <p>Get a free initial consultation to understand your case and legal options</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Document Review</h3>
+                        <p>We review your challan documents and prepare the necessary legal paperwork</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Legal Action</h3>
+                        <p>We represent you in court or negotiate with authorities for the best outcome</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Resolution</h3>
+                        <p>Your case is resolved with minimal fines and maximum satisfaction</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
+                    <h2 class="section-title">About Our Legal Services</h2>
                     <p>
-                        Hey, I'm <strong>Manav Sharma</strong>, a BCA graduate from Delhi, India with a passion for data analytics. 
-                        I specialize in cleaning & analyzing data using <strong>Python</strong> and <strong>SQL</strong>, 
-                        and building dynamic dashboards in <strong>Power BI</strong> & <strong>Tableau</strong>.
+                        With years of experience in traffic law and challan settlement, we understand the stress and 
+                        inconvenience that traffic violations can cause. Our team of qualified advocates specializes 
+                        in providing efficient legal solutions for all types of road traffic violations across India.
                     </p>
                     <p>
-                        I'm obsessed with real-time problem-solving, visual storytelling, and human-computer interaction. 
-                        Currently exploring opportunities to apply my skills in real-world analytics projects.
+                        We believe in making legal assistance accessible and affordable. Our transparent fee structure 
+                        and commitment to client satisfaction have made us a trusted name in traffic challan resolution.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Learning</span>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Experienced Advocates</h4>
+                                <p>Qualified legal professionals with expertise in traffic law</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Projects Completed</span>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Quick Resolution</h4>
+                                <p>Fast-track processing to resolve your cases efficiently</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Certifications</span>
+                        <div class="feature">
+                            <i class="fas fa-rupee-sign"></i>
+                            <div>
+                                <h4>Affordable Fees</h4>
+                                <p>Transparent and competitive pricing for all services</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-card">
+                        <i class="fas fa-award"></i>
+                        <h3>Why Choose Us?</h3>
+                        <ul>
+                            <li>✓ 95% Success Rate</li>
+                            <li>✓ 24/7 Support</li>
+                            <li>✓ Free Consultation</li>
+                            <li>✓ No Hidden Charges</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch for a free consultation on your traffic challan</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL</span>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
+                            <p>+91 98765 43210</p>
+                            <p>+91 98765 43211</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>+91 98765 43210</p>
+                            <p>24/7 Support Available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>info@legalsolutions.in</p>
+                            <p>consultation@legalsolutions.in</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Office Address</h4>
+                            <p>123 Legal Chambers,</p>
+                            <p>Connaught Place, New Delhi - 110001</p>
                         </div>
                     </div>
                 </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-chart-bar"></i>
-                            <span>Power BI</span>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Tableau</span>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-table"></i>
-                            <span>Excel</span>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email Address">
                         </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Development Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>VS Code</span>
+                        <div class="form-group">
+                            <select id="violation" name="violation" required>
+                                <option value="">Select Violation Type</option>
+                                <option value="speeding">Speeding</option>
+                                <option value="signal">Signal Violation</option>
+                                <option value="parking">Parking Violation</option>
+                                <option value="license">License Related</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                        <div class="skill-item">
-                            <i class="fas fa-book"></i>
-                            <span>Jupyter</span>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Describe your case briefly..." rows="4"></textarea>
                         </div>
-                        <div class="skill-item">
-                            <i class="fab fa-google"></i>
-                            <span>Google Colab</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-hand-paper"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Gesture-Based Volume Control</h3>
-                        <p>Control system audio using your fingers — built with Python, OpenCV, and MediaPipe</p>
-                        <ul class="project-features">
-                            <li>Real-time webcam hand tracking</li>
-                            <li>Maps finger distance to audio levels</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Man-av/Gesture-Volume-Control" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Customer Sales Dashboard</h3>
-                        <p>Interactive Power BI dashboard showcasing multi-year sales trends</p>
-                        <ul class="project-features">
-                            <li>Filterable views by region, category, and segment</li>
-                            <li>Helps in fast decision-making</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Man-av/customer-sales-analysis" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-charging-station"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>EV Charging Station Demand Analysis</h3>
-                        <p>Used Python, SQL, Excel, and Tableau to analyze EV infrastructure needs</p>
-                        <ul class="project-features">
-                            <li>Identified states lacking EV support</li>
-                            <li>Visual dashboards with EVs per 1000 people, charging gaps</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Man-av/EV-Charging-Station-Demand-Analysis" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> View Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2 class="section-title">Education & Certifications</h2>
-            <div class="education-content">
-                <div class="education-item">
-                    <div class="education-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="education-details">
-                        <h3>Bachelor of Computer Applications (BCA)</h3>
-                        <p class="education-institution">Graduated</p>
-                        <p class="education-description">Computer Applications and Information Technology</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="certifications">
-                <h3>Certifications</h3>
-                <div class="cert-grid">
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <div class="cert-content">
-                            <h4>Deloitte Data Analytics Internship</h4>
-                            <p>Forage</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <div class="cert-content">
-                            <h4>SQL Bootcamp – 30 Days Challenge</h4>
-                            <p>Completed</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <div class="cert-content">
-                            <h4>Power BI Bootcamp – 30 Days Challenge</h4>
-                            <p>Completed</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <div class="cert-content">
-                            <h4>Python for Data Science</h4>
-                            <p>NPTEL (IIT Madras)</p>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <i class="fas fa-certificate"></i>
-                        <div class="cert-content">
-                            <h4>Excel for Data Analysis</h4>
-                            <p>SkillUp</p>
-                        </div>
-                    </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -302,7 +340,54 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Manav Sharma. Built with ❤️ and lots of debugging.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-balance-scale"></i>
+                        <span>Legal Solutions</span>
+                    </div>
+                    <p>Professional legal services for traffic challan and fine settlement across India.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Traffic Violations</li>
+                        <li>Documentation</li>
+                        <li>Court Representation</li>
+                        <li>Legal Consultation</li>
+                        <li>Fine Settlement</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@legalsolutions.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Legal Solutions. All rights reserved. | Professional Legal Services for Traffic Challans</p>
+            </div>
         </div>
     </footer>
 
