@@ -1,67 +1,132 @@
-# 👨‍💻 Manav Sharma's Portfolio
+# Legal Solutions - Road Challan & Fine Settlement Services
 
-Welcome to my portfolio! I'm an aspiring **Data Analyst** from Delhi, India with a passion for transforming messy data into clean, actionable insights. This GitHub Pages project showcases my hands-on work, skills, certifications, and learning journey.
+A professional website for legal services specializing in road challan and fine settlement across India. This website provides a modern, responsive interface for clients to learn about services and contact legal professionals for assistance with traffic violations.
+
+## 🌟 Features
+
+### Design & User Experience
+- **Modern Professional Design**: Clean, professional interface suitable for legal services
+- **Light & Dark Theme**: Toggle between light and dark themes with smooth transitions
+- **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
+- **Smooth Animations**: Engaging hover effects and scroll animations
+- **Accessibility**: High contrast colors and readable typography
+
+### Functionality
+- **Contact Form**: Interactive form with validation for client inquiries
+- **Service Information**: Detailed breakdown of legal services offered
+- **Process Overview**: Step-by-step guide on how the service works
+- **Statistics Display**: Animated counters showing success metrics
+- **Mobile Navigation**: Hamburger menu for mobile devices
+
+### Technical Features
+- **Theme Persistence**: Remembers user's theme preference
+- **Form Validation**: Client-side validation for contact forms
+- **Smooth Scrolling**: Seamless navigation between sections
+- **Performance Optimized**: Fast loading and smooth interactions
+
+## 🚀 Services Covered
+
+### Traffic Violation Cases
+- Speeding tickets
+- Signal violations
+- Parking violations
+- License-related issues
+
+### Legal Services
+- Document preparation and filing
+- Court representation
+- Legal consultation
+- Fine negotiation and settlement
+- 24/7 emergency support
+
+## 🛠️ Technologies Used
+
+- **HTML5**: Semantic markup structure
+- **CSS3**: Modern styling with CSS Grid and Flexbox
+- **JavaScript (ES6+)**: Interactive functionality and animations
+- **Font Awesome**: Professional icons
+- **Google Fonts**: Inter font family for readability
+
+## 📱 Responsive Design
+
+The website is fully responsive and optimized for:
+- **Desktop**: 1200px+ (full feature set)
+- **Tablet**: 768px - 1199px (adapted layout)
+- **Mobile**: 320px - 767px (mobile-first approach)
+
+## 🎨 Theme System
+
+### Light Theme
+- Clean white background
+- Professional blue color scheme
+- High contrast for readability
+- Subtle shadows and borders
+
+### Dark Theme
+- Dark navy background
+- Adjusted color palette for dark mode
+- Maintained readability and contrast
+- Smooth transition animations
+
+## 📋 Sections
+
+1. **Hero Section**: Main introduction with call-to-action
+2. **Services**: Detailed breakdown of legal services
+3. **Process**: Step-by-step service workflow
+4. **About**: Information about the legal team
+5. **Contact**: Multiple contact methods and inquiry form
+6. **Footer**: Additional links and information
+
+## 🔧 Setup & Installation
+
+1. **Clone or Download**: Get the project files
+2. **Open in Browser**: Simply open `index.html` in any modern web browser
+3. **No Build Process**: Pure HTML, CSS, and JavaScript - no compilation needed
+
+## 📞 Contact Information
+
+The website includes placeholder contact information that should be updated with actual details:
+
+- **Phone**: +91 98765 43210
+- **WhatsApp**: +91 98765 43210
+- **Email**: info@legalsolutions.in
+- **Address**: 123 Legal Chambers, Connaught Place, New Delhi - 110001
+
+## 🎯 Target Audience
+
+- Indian citizens with traffic challans
+- Individuals seeking legal assistance for fines
+- People looking for professional legal consultation
+- Clients needing quick resolution of traffic violations
+
+## 🔒 Privacy & Security
+
+- Form data is handled client-side only
+- No data collection without user consent
+- Secure contact methods provided
+- Professional legal service standards
+
+## 📈 Performance
+
+- Optimized images and assets
+- Minimal JavaScript for fast loading
+- CSS animations for smooth interactions
+- Mobile-optimized for fast browsing
+
+## 🚀 Future Enhancements
+
+Potential improvements for the website:
+- Backend integration for form processing
+- Live chat functionality
+- Case tracking system
+- Payment gateway integration
+- Blog section for legal updates
+- Multi-language support
+
+## 📄 License
+
+This project is created for professional legal services. Please ensure compliance with local legal advertising regulations when using this template.
 
 ---
 
-## 📌 About Me
-
-Hey, I'm **Manav Sharma**, a BCA graduate with a knack for:
-- Cleaning & analyzing data using **Python** and **SQL**
-- Building dynamic dashboards in **Power BI** & **Tableau**
-- Exploring real-world datasets and making data *talk* 📊
-
-I'm obsessed with real-time problem-solving, visual storytelling, and human-computer interaction. Currently exploring opportunities to apply my skills in real-world analytics projects.
-
----
-
-## 💼 Projects
-
-### 🎯 [Gesture-Based Volume Control](https://github.com/Man-av/Gesture-Volume-Control)
-Control system audio using your fingers — built with **Python**, **OpenCV**, and **MediaPipe**  
-→ Real-time webcam hand tracking  
-→ Maps finger distance to audio levels
-
----
-
-### 📊 [Customer Sales Dashboard](https://github.com/Man-av/customer-sales-analysis)
-Interactive **Power BI** dashboard showcasing multi-year sales trends  
-→ Filterable views by region, category, and segment  
-→ Helps in fast decision-making
-
----
-
-### ⚡ [EV Charging Station Demand Analysis](https://github.com/Man-av/EV-Charging-Station-Demand-Analysis)
-Used **Python, SQL, Excel, and Tableau** to analyze EV infrastructure needs  
-→ Identified states lacking EV support  
-→ Visual dashboards with EVs per 1000 people, charging gaps
-
----
-
-## 🧠 Skills
-
-- **Languages**: Python, SQL  
-- **Tools**: Excel, Power BI, Tableau, VS Code, Jupyter, Google Colab  
-- **Databases**: MySQL, PostgreSQL  
-
----
-
-## 🎓 Certifications
-
-- [Deloitte Data Analytics Internship – Forage](https://github.com/Man-av/Certifications/blob/main/Delloite%20Data%20Analytics%20job%20simulation%2012%20june.pdf)
-- [SQL Bootcamp – 30 Days Challenge](https://github.com/Man-av/Certifications/blob/main/SQL%2030%20Days%20may%2027%2025.pdf)
-- [Power BI Bootcamp – 30 Days Challenge](https://github.com/Man-av/Certifications/blob/main/Power%20Bi%2030%20dys%20may%2027%2025.pdf)
-- [Python for Data Science – NPTEL (IIT Madras)](https://github.com/Man-av/Certifications/blob/main/Python%20for%20Data%20Science%20nptel.pdf)
-- [Excel for Data Analysis – SkillUp](https://github.com/Man-av/Certifications/blob/main/EXCEL%20simple%20learn%20skill%20up%2022%20june%202025.pdf)
-
----
-
-## 📫 Let's Connect
-
-- **Email**: manavsharma6626@gmail.com  
-- **GitHub**: [Man-av](https://github.com/Man-av/)  
-- **LinkedIn**: [manvsharma](https://www.linkedin.com/in/manvsharma/)
-
----
-
-### 🚀 This portfolio is built with love, caffeine, and a lot of debugging.
+**Note**: This is a professional legal services website template. All contact information and legal disclaimers should be reviewed and updated according to local legal requirements before deployment.
