@@ -1,4 +1,32 @@
-// Mobile Navigation Toggle
+// Theme Management
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference or default to light theme
+const currentTheme = localStorage.getItem('theme') || 'light';
+body.setAttribute('data-theme', currentTheme);
+updateThemeIcon(currentTheme);
+
+// Theme toggle functionality
+themeToggle.addEventListener('click', () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+});
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
+
+// Mobile Navigation
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -8,10 +36,12 @@ hamburger.addEventListener('click', () => {
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -19,9 +49,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offsetTop = target.offsetTop - 70; // Account for fixed navbar
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
             });
         }
     });
@@ -30,34 +61,115 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar background on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 25, 47, 0.98)';
+    if (window.scrollY > 50) {
+        navbar.style.background = 'var(--bg-navbar)';
+        navbar.style.boxShadow = 'var(--shadow-medium)';
     } else {
-        navbar.style.background = 'rgba(10, 25, 47, 0.95)';
+        navbar.style.background = 'var(--bg-navbar)';
+        navbar.style.boxShadow = 'none';
     }
 });
 
-// Active navigation link highlighting
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.scrollY >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Basic validation
+    if (!data.name || !data.phone || !data.challanType) {
+        showNotification('Please fill in all required fields.', 'error');
+        return;
+    }
+    
+    // Simulate form submission
+    showNotification('Thank you! We will contact you soon.', 'success');
+    
+    // Reset form
+    this.reset();
+    
+    // In a real application, you would send this data to your server
+    console.log('Form submitted:', data);
 });
+
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas ${getNotificationIcon(type)}"></i>
+            <span>${message}</span>
+            <button class="notification-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    // Add styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: var(--shadow-large);
+        z-index: 10000;
+        max-width: 400px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        removeNotification(notification);
+    }, 5000);
+    
+    // Close button functionality
+    const closeBtn = notification.querySelector('.notification-close');
+    closeBtn.addEventListener('click', () => {
+        removeNotification(notification);
+    });
+}
+
+function removeNotification(notification) {
+    notification.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 300);
+}
+
+function getNotificationIcon(type) {
+    switch (type) {
+        case 'success': return 'fa-check-circle';
+        case 'error': return 'fa-exclamation-circle';
+        case 'warning': return 'fa-exclamation-triangle';
+        default: return 'fa-info-circle';
+    }
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -76,7 +188,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.skill-category, .project-card, .cert-item');
+    const animateElements = document.querySelectorAll('.service-card, .step, .contact-card, .about-card');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -86,104 +198,142 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Project card hover effects
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-    });
+// Counter animation for stats
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
     
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Skill item hover effects
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateX(10px)';
-        this.style.background = 'rgba(100, 255, 218, 0.15)';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateX(0)';
-        this.style.background = 'rgba(100, 255, 218, 0.05)';
-    });
-});
-
-// Social link hover effects
-document.querySelectorAll('.social-link').forEach(link => {
-    link.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px) scale(1.1)';
-    });
-    
-    link.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
-
-// Scroll to top functionality
-function createScrollToTop() {
-    const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '↑';
-    scrollBtn.className = 'scroll-to-top';
-    scrollBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--gradient-primary);
-        color: var(--background-color);
-        border: none;
-        cursor: pointer;
-        font-size: 1.2rem;
-        font-weight: bold;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        box-shadow: 0 4px 12px rgba(100, 255, 218, 0.3);
-    `;
-    
-    document.body.appendChild(scrollBtn);
-    
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollBtn.style.opacity = '1';
-            scrollBtn.style.visibility = 'visible';
+    counters.forEach(counter => {
+        const target = counter.textContent;
+        const isPercentage = target.includes('%');
+        const isTime = target.includes('hrs');
+        
+        let finalValue;
+        if (isPercentage) {
+            finalValue = parseInt(target);
+        } else if (isTime) {
+            finalValue = 24;
         } else {
-            scrollBtn.style.opacity = '0';
-            scrollBtn.style.visibility = 'hidden';
+            finalValue = parseInt(target.replace(/\D/g, ''));
         }
-    });
-    
-    scrollBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-    
-    scrollBtn.addEventListener('mouseenter', () => {
-        scrollBtn.style.transform = 'scale(1.1)';
-    });
-    
-    scrollBtn.addEventListener('mouseleave', () => {
-        scrollBtn.style.transform = 'scale(1)';
+        
+        let currentValue = 0;
+        const increment = finalValue / 50;
+        
+        const updateCounter = () => {
+            if (currentValue < finalValue) {
+                currentValue += increment;
+                if (isPercentage) {
+                    counter.textContent = Math.ceil(currentValue) + '%';
+                } else if (isTime) {
+                    counter.textContent = Math.ceil(currentValue) + 'hrs';
+                } else {
+                    counter.textContent = Math.ceil(currentValue) + '+';
+                }
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target;
+            }
+        };
+        
+        updateCounter();
     });
 }
 
-document.addEventListener('DOMContentLoaded', createScrollToTop);
+// Trigger counter animation when stats section is visible
+const statsSection = document.querySelector('.hero-stats');
+if (statsSection) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    statsObserver.observe(statsSection);
+}
 
-// Add CSS for active nav link
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: var(--primary-color) !important;
-    }
-    .nav-link.active::after {
-        width: 100% !important;
-    }
-`;
-document.head.appendChild(style);
+// WhatsApp integration
+function openWhatsApp() {
+    const phone = '+919876543210';
+    const message = 'Hi, I need help with my road challan. Can you please assist me?';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+
+// Add WhatsApp click handlers
+document.addEventListener('DOMContentLoaded', () => {
+    const whatsappElements = document.querySelectorAll('.contact-card:has(.fa-whatsapp)');
+    whatsappElements.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', openWhatsApp);
+    });
+});
+
+// Phone number click handlers
+function makePhoneCall(phoneNumber) {
+    window.location.href = `tel:${phoneNumber}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const phoneElements = document.querySelectorAll('.contact-card:has(.fa-phone)');
+    phoneElements.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', () => {
+            const phoneText = element.querySelector('p').textContent;
+            const phoneNumber = phoneText.replace(/\D/g, '');
+            makePhoneCall(phoneNumber);
+        });
+    });
+});
+
+// Email click handlers
+function sendEmail(emailAddress) {
+    window.location.href = `mailto:${emailAddress}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const emailElements = document.querySelectorAll('.contact-card:has(.fa-envelope)');
+    emailElements.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', () => {
+            const emailText = element.querySelector('p').textContent;
+            sendEmail(emailText);
+        });
+    });
+});
+
+// Loading animation
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+// Initialize page
+document.addEventListener('DOMContentLoaded', () => {
+    // Set initial body opacity
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    // Show page after a brief delay
+    setTimeout(() => {
+        document.body.style.opacity = '1';
+    }, 100);
+    
+    // Add loading states to buttons
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.type === 'submit') {
+                const originalText = this.textContent;
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+                    this.innerHTML = originalText;
+                    this.disabled = false;
+                }, 2000);
+            }
+        });
+    });
+});
